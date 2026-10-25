@@ -24,8 +24,8 @@ DOCS_DIR.mkdir(exist_ok=True)
 MODEL = "gpt-5-mini"
 
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-    base_url=os.getenv(
+    api_key=st.secrets["OPENAI_API_KEY"],
+    base_url=st.secrets.get(
         "GAPGPT_BASE_URL",
         "https://api.gapgpt.app/v1"
     )
